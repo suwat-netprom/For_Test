@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var t = {program: "13 , 721 ,22,"}
+
+    //console.log(t.replace(/ /g,''));
+    console.log(t.program.replace(/ /g,''));
+
+
+
+    if (typeof window.metadataDFP != "undefined" && typeof window.metadataDFP.keyValue != "undefined") {
+        if (Object.keys(window.metadataDFP.keyValue).length > 0) {
+            for (var adKey in window.metadataDFP.keyValue) {
+                console.log(adKey);
+                console.log(adKey.replace(/ /g,''));
+                console.log(window.metadataDFP.keyValue[adKey]);
+                console.log(window.metadataDFP.keyValue[adKey].replace(/ /g,''));
+                /*googletag.pubads().setTargeting($.trim(adKey), $.trim(window.metadataDFP.keyValue[adKey]));*/
+                googletag.pubads().setTargeting(adKey.replace(/ /g,''), window.metadataDFP.keyValue[adKey].replace(/ /g,''));
+            }
+        }
+    }
+
+
+    window.metadataDFP.keyValue[program]
+
+</script>
+</body>
+</html>
